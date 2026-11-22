@@ -9,19 +9,19 @@ Nikodem Boryczka is an AI Developer and Software Engineer from Silesia, Poland. 
 - Redis, JWT, Git, Linux
 
 ## Key Projects
-- **OSP Logbook** — Flask + PostgreSQL + Docker + PWA web app for fire brigade unit logistics
-- **AlkoRater** — iOS PWA for rating and cataloging alcohols
-- **Gather** — FastAPI + PostgreSQL + Redis event/social REST API
-- **UPM Ultras** — HTML/CSS static fan club website
+- **Apply Log+**: local-first job application tracker
+- **AlkoRater**: Polish-language browser app for personal tasting notes
+- **FiveM Plate Textures**: experimental Lua resource for isolated FiveM test servers
+- **UPM Ultras**: static football supporters’ site
 
 ## Contact
 - GitHub: https://github.com/t91a60
 - Email: t91a60@gmail.com
 
 ## Links
-- Portfolio: https://t91a60.github.io/NikodemBoryczka/
+- Portfolio: https://t91a60.github.io/Nikodem/
 - GitHub Profile: https://github.com/t91a60
-- OSP Logbook: https://github.com/t91a60/osp-logbook
-- AlkoRater: https://github.com/t91a60/alko-rater
-- Gather: https://github.com/t91a60/Gather
+- Apply Log+: https://github.com/t91a60/Apply-Log-plus
+- AlkoRater: https://github.com/t91a60/AlkoRater
+- FiveM Plate Textures: https://github.com/t91a60/fivem-plate-textures
 - UPM Ultras: https://github.com/t91a60/upm-ultras

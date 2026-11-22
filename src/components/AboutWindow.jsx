@@ -61,21 +61,16 @@ export default function AboutWindow() {
               About me
             </h3>
             <p className="mb-2">
-              Nikodem Boryczka is a Full Stack Software Engineer and AI Developer from Silesia, Poland. He specializes in
-              Python (Flask, FastAPI), PostgreSQL, React, Docker, and Redis — building production-grade web applications,
-              REST APIs, and progressive web applications with layered architectures and modern DevOps practices.
+              I’m Nikodem Boryczka. I build local-first web apps, APIs, and tools for everyday workflows, mainly
+              with TypeScript, React, Python, and SQL.
             </p>
             <p className="mb-2">
-              Nikodem is currently a student at Programming Technical School with a specialization in Artificial Intelligence.
-              His portfolio includes open-source projects such as OSP Logbook (Flask + PostgreSQL + Docker fire brigade
-              management system), Gather (FastAPI + PostgreSQL + Redis event REST API), AlkoRater (iOS PWA for alcohol
-              cataloging), and UPM Ultras (fan club static website).
+              Apply Log+ tracks job applications and their stages. AlkoRater keeps personal tasting notes in your browser.
+              Both make it possible to back up and move your data without relying on an account.
             </p>
             <p>
-              Nikodem focuses on solving practical engineering problems: database connection pooling, Redis caching with
-              graceful fallback, JWT authentication, rate limiting middleware, CI/CD pipelines, containerized deployments,
-              and automated testing with pytest and testcontainers. He follows clean code principles, layered architecture
-              patterns, and believes in building maintainable, testable, accessible software.
+              Open Projects to browse the public repositories. The terminal is simulated: try <code>help</code> to
+              see what you can do.
             </p>
           </motion.section>
 

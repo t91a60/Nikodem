@@ -1,4 +1,5 @@
 import { getHistory } from '../lib/terminalHistory.js'
+import { projects } from './projects.js'
 
 const neofetchData = {
   uptime: Math.floor(Math.random() * 999),
@@ -86,11 +87,8 @@ export const commands = {
 
   projects: () =>
     '\x1b[1;33mProjects:\x1b[0m\n' +
-    '  \x1b[32mOSP Logbook\x1b[0m    \x1b[36mFlask\x1b[0m/\x1b[36mPostgreSQL\x1b[0m/\x1b[36mDocker\x1b[0m\n' +
-    '  \x1b[32mAlkoRater\x1b[0m      \x1b[36mPWA\x1b[0m/\x1b[36mJavaScript\x1b[0m/\x1b[36miOS\x1b[0m\n' +
-    '  \x1b[32mGather\x1b[0m        \x1b[36mFastAPI\x1b[0m/\x1b[36mPostgreSQL\x1b[0m/\x1b[36mRedis\x1b[0m\n' +
-    '  \x1b[32mUPM Ultras\x1b[0m     \x1b[36mHTML\x1b[0m/\x1b[36mCSS\x1b[0m/\x1b[36mStatic Site\x1b[0m\n' +
-    'Type \x1b[33mopen <name>\x1b[0m for details.',
+    projects.map(({ title, id }) => `  \x1b[32m${title}\x1b[0m  \x1b[36m${id}\x1b[0m`).join('\n') +
+    '\nType \x1b[33mopen <project-id>\x1b[0m for details.',
 
   history: () => {
     const h = getHistory()
@@ -117,15 +115,17 @@ export const commands = {
 
   open: (args) => {
     const name = (args || '').toLowerCase().trim()
-    const projectMap = {
-      'osp-logbook': '\x1b[1;33mOSP Logbook\x1b[0m\n\x1b[34mStack:\x1b[0m Flask, PostgreSQL, Docker, PWA, Python\n\x1b[34mAbout:\x1b[0m Modern web application for tracking departures, refueling, and maintenance for OSP fire brigade units.\n\x1b[34mLink:\x1b[0m \x1b[36mhttps://github.com/t91a60/osp-logbook\x1b[0m',
-      'alkorater': '\x1b[1;33mAlkoRater\x1b[0m\n\x1b[34mStack:\x1b[0m PWA, JavaScript, iOS, Service Worker, CSS\n\x1b[34mAbout:\x1b[0m Premium iOS PWA for rating and cataloging alcohols.\n\x1b[34mLink:\x1b[0m \x1b[36mhttps://github.com/t91a60/alko-rater\x1b[0m',
-      'gather': '\x1b[1;33mGather\x1b[0m\n\x1b[34mStack:\x1b[0m FastAPI, PostgreSQL, Redis, Docker, Python, JWT\n\x1b[34mAbout:\x1b[0m Event/Social REST API with layered architecture.\n\x1b[34mLink:\x1b[0m \x1b[36mhttps://github.com/t91a60/Gather\x1b[0m',
-      'upm-ultras': '\x1b[1;33mUPM Ultras\x1b[0m\n\x1b[34mStack:\x1b[0m HTML, CSS, JavaScript, Static Site\n\x1b[34mAbout:\x1b[0m Official website of Ultras Polonia Mi\u0119dzyrzecze.\n\x1b[34mLink:\x1b[0m \x1b[36mhttps://github.com/t91a60/upm-ultras\x1b[0m',
+    const project = projects.find(({ id, title }) => id === name || title.toLowerCase() === name)
+    if (project) {
+      return [
+        `\x1b[1;33m${project.title}\x1b[0m`,
+        `\x1b[34mStack:\x1b[0m ${project.tech.join(', ')}`,
+        `\x1b[34mAbout:\x1b[0m ${project.description}`,
+        `\x1b[34mLink:\x1b[0m \x1b[36m${project.link}\x1b[0m`,
+      ].join('\n')
     }
-    if (name && projectMap[name]) return projectMap[name]
     if (name) return `\x1b[91mProject not found\x1b[0m: ${name}. Try \x1b[33mprojects\x1b[0m to list all.`
-    return '\x1b[33mUsage:\x1b[0m open <project-name>. Try \x1b[33mprojects\x1b[0m to list all.'
+    return '\x1b[33mUsage:\x1b[0m open <project-id>. Try \x1b[33mprojects\x1b[0m to list all.'
   },
 }
 

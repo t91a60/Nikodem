@@ -2,7 +2,7 @@
 
 My portfolio as an Ubuntu-style desktop in the browser. Open a window to browse projects, read about me, or use the simulated terminal.
 
-[Open the portfolio](https://t91a60.github.io/NikodemBoryczka/) · [Report a bug](https://github.com/t91a60/NikodemBoryczka/issues)
+[Open the portfolio](https://t91a60.github.io/Nikodem/) · [Run locally](#run-locally) · [Report a bug](https://github.com/t91a60/Nikodem/issues)
 
 ## Using the desktop
 
@@ -24,12 +24,14 @@ Reduced motion, reduced transparency, and increased contrast follow browser pref
 
 ## Run locally
 
+Use Node.js 20.19 or newer, or Node.js 22.12 or newer on the 22.x line.
+
 ```sh
 npm ci
 npm run dev
 ```
 
-Open the local URL printed by Vite. The app uses the `/NikodemBoryczka/` base path.
+Open the local URL printed by Vite. The app uses the `/Nikodem/` base path.
 
 ```sh
 npm run build

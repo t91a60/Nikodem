@@ -1,6 +1,6 @@
 import { projects } from '../data/projects.js'
 
-const BASE = 'https://t91a60.github.io/NikodemBoryczka'
+const BASE = 'https://t91a60.github.io/Nikodem'
 
 const techKeywords = [
   'Python', 'Flask', 'FastAPI', 'React', 'PostgreSQL', 'Docker',
@@ -31,7 +31,7 @@ function profilePageSchema() {
       {
         '@type': 'WebPageElement',
         name: 'Projects',
-        description: 'Open-source portfolio projects including OSP Logbook, AlkoRater, Gather, and UPM Ultras',
+        description: 'Public projects including Apply Log+, AlkoRater, FiveM Plate Textures, and UPM Ultras',
         url: `${BASE}/#projects`,
       },
       {
@@ -72,10 +72,8 @@ function softwareSourceCodeSchemas() {
     description: p.description,
     url: p.link,
     codeRepository: p.link,
-    programmingLanguage: p.tech.filter(t => ['Python', 'JavaScript', 'TypeScript', 'HTML', 'CSS'].includes(t)),
-    runtimePlatform: p.tech.filter(t => ['Docker', 'PWA', 'iOS'].includes(t)),
-    operatingSystem: 'Linux, macOS, Windows',
-    applicationCategory: p.id === 'gather' ? 'API' : 'WebApplication',
+    programmingLanguage: p.tech.filter(t => ['Python', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'Lua'].includes(t)),
+    runtimePlatform: p.id === 'fivem-plate-textures' ? 'FiveM' : 'Web browser',
     author: {
       '@type': 'Person',
       '@id': `${BASE}/#person`,

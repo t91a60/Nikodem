@@ -4,16 +4,18 @@ import { motion, AnimatePresence } from 'motion/react'
 import { GithubLogo, Code, Star, GitFork } from '@phosphor-icons/react'
 
 const projectColors = {
-  'osp-logbook': { primary: '#0E8420', bg: 'rgba(14,132,32,0.08)', border: 'rgba(14,132,32,0.2)' },
+  'apply-log-plus': { primary: '#22C55E', bg: 'rgba(34,197,94,0.08)', border: 'rgba(34,197,94,0.2)' },
   'alkorater': { primary: '#3355ff', bg: 'rgba(51,85,255,0.08)', border: 'rgba(51,85,255,0.2)' },
   'upm-ultras': { primary: '#F99B11', bg: 'rgba(249,155,17,0.08)', border: 'rgba(249,155,17,0.2)' },
-  'gather': { primary: '#6366f1', bg: 'rgba(99,102,241,0.08)', border: 'rgba(99,102,241,0.2)' },
+  'fivem-plate-textures': { primary: '#818CF8', bg: 'rgba(129,140,248,0.08)', border: 'rgba(129,140,248,0.2)' },
 }
+
+const defaultColors = { primary: '#F99B11', bg: 'rgba(249,155,17,0.08)', border: 'rgba(249,155,17,0.2)' }
 
 export default function ProjectWindow() {
   const [activeId, setActiveId] = useState(projects[0]?.id)
   const project = projects.find(p => p.id === activeId)
-  const colors = projectColors[activeId] || projectColors['osp-logbook']
+  const colors = projectColors[activeId] || defaultColors
 
   return (
     <div className="project-window" role="region" aria-label="Portfolio projects">
@@ -41,7 +43,7 @@ export default function ProjectWindow() {
           Projects
         </div>
         {projects.map(p => {
-          const c = projectColors[p.id]
+          const c = projectColors[p.id] || defaultColors
           const isActive = activeId === p.id
           return (
             <button
